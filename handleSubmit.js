@@ -1,18 +1,18 @@
 
 exports.handleData = async(req,res) => {
     try{
-        const { array } = req.body;
-        const numbers = array.filter(number => 
+        const { data } = req.body;
+        const numbers = data.filter(number => 
             {
                 number = parseInt(number)
                 return typeof number === 'number' && number % 2 === 0 && !isNaN(number)
             }
         )
-        const odd = array.filter(number => {
+        const odd = data.filter(number => {
             number = parseInt(number)
             return typeof number === 'number' && number % 2 !== 0 && !isNaN(number)
         })
-        const alphabhets = array.filter(alphabet => {
+        const alphabhets = data.filter(alphabet => {
             const number = parseInt(alphabet)
             if (typeof alphabet === 'string' && isNaN(number)) {
                 return true; // Include alphabets
